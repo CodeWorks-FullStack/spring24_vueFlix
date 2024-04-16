@@ -53,6 +53,7 @@ async function changeSearchPage(pageNumber){
     <SearchBar/>
   </section>
 
+  <!-- NOTE buttons for changing the pagination for the discover endpoint -->
   <section v-if="!AppState.searchTerm" class="row my-2">
     <div class="col-4">
       <button :disabled="AppState.currentPage == 1" class="btn btn-primary w-100" @click="changePage(AppState.currentPage - 1)" >Previous Page</button>
@@ -63,6 +64,7 @@ async function changeSearchPage(pageNumber){
     </div>
   </section>
 
+  <!-- NOTE buttons for changing  the pagination for the search endpoint -->
   <section v-else class="row my-2">
     <div class="col-4">
       <button :disabled="AppState.currentPage == 1" class="btn btn-info w-100" @click="changeSearchPage(AppState.currentPage - 1)" >Previous Page</button>
@@ -81,9 +83,10 @@ async function changeSearchPage(pageNumber){
       <h6>{{ movie.title }}</h6>
     </div> -->
 
-    <!-- NOTE v-for, copies the MovieCard "for" each movie in the movies array -->
+    <!-- NOTE v-for, copies the MovieCard "for" each 'movie' in the 'movies' array -->
     <!-- NOTE :key="movie.id" helps vue keep track of the element in the DOM -->
     <!-- NOTE the :movie="movie" passes the single movie objects data to, the MovieCard, through a "defined property" on the MovieCard -->
+    <!-- :movie, is referencing the name of the prop in the MovieCard while ="movie" is the value passed down for the MovieCard to display-->
     <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" class="col-6 col-md-3 pb-2"/>
 
   </section>

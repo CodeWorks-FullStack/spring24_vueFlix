@@ -11,6 +11,8 @@ const routes = [
     name: 'Home',
     component: loadPage('HomePage')
   },
+  // Our own route, to view a single movies details
+  // the :movieId is a route parameter. This lets us pass a value into the route, and pulled out later
   {
     path: '/movie/:movieId',
     name: 'Movie Details',

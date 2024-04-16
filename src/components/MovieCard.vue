@@ -12,6 +12,7 @@ defineProps({movie: Movie}) // Props work like our arguments and parameters. It 
 
 
 <template>
+  <!-- NOTE this router link is a vue component that points to a specific route we have defined in the router.js -->
   <RouterLink :to="{name: 'Movie Details', params: {movieId: movie.id}}" class="selectable">
     <!-- <div class="col-6 col-md-3 pb-2"> replaced with routerlink -->
       <!-- 🧈 used to help us decipher what was from the component while we built it -->
